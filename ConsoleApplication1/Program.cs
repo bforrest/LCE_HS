@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using FizzBuzz;
 
 namespace ConsoleApplication1
 {
@@ -18,19 +16,28 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             try
-            {
-                
-                var lib = new FizzBuzz.FizzBuzz(1, 1000000000);
+            {   
+                var lib = new FizzBuzz.FizzBuzz(1, 100);
                 foreach (var result in lib.Results())
                 {
                     Console.WriteLine(result);
                 }
+
+                foreach (var reply in lib.CustomRules(new List<Rule>
+                {
+                    new Rule{ Divisor = 8, ReplaceWith = "Bazz"},
+                    new Rule{ Divisor = 10, ReplaceWith = "Bar"}
+                }))
+                {
+                    Console.WriteLine(reply);
+                }
+                
             }
             catch (ArgumentException ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            
+            Console.ReadLine();
         }
     }
 }
