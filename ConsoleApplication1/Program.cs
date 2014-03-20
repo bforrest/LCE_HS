@@ -6,13 +6,6 @@ namespace ConsoleApplication1
 {
     class Program
     {
-        // Program and Library for re-using.
-
-
-        // 3 fizz, 5 buzz, 8 bazz, 10 bar etc.
-        //Finish up test, modify program to support arbitrary tokens and divisors.
-        // cedric@headspring.com
-
         static void Main(string[] args)
         {
             try
